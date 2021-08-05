@@ -1,6 +1,7 @@
 #!/bin/bash -x
 
 # sudo chmod +x  edit-host.sh
+# chmod -R 777 edit-host.sh
 # ./edit-host.sh
 
 #Mac获取GitHub的IP 追加到hosts文件中
@@ -50,7 +51,7 @@ python3 getGithubIP.py
 if [ ! -f ${filename} ];then
   echo ">>>文件不存在>>>"
 else
-	sudo -s
+	# sudo -s
 	cat hosts >> /etc/hosts
 
 fi
