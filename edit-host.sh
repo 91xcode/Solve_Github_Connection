@@ -12,7 +12,7 @@ cd $(dirname $0)
 
 
 
-echo ">>>begin>>>"
+echo ">>>begin remove host for github>>>"
 
 filepath="/etc/hosts"
 
@@ -43,11 +43,16 @@ fi
 fi 
 
 
-echo ">>>finish>>>"
+echo ">>>done remove host for github>>>"
 
 
+echo ">>>start getGithubIP >>>"
 
 python3 getGithubIP.py
+
+echo ">>>done getGithubIP>>>"
+
+
 
 
 if [ ! -f ${filename} ];then
@@ -57,5 +62,9 @@ else
 	cat hosts >> /etc/hosts
 
 fi
+
+
+# 清除DNS缓存命令
+sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder;say flushed
 
 
