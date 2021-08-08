@@ -1,8 +1,9 @@
-#!/bin/bash -x
+#!/bin/bash 
 
 # sudo chmod +x  edit-host.sh
 # chmod -R 777 edit-host.sh
-# ./edit-host.sh
+# sudo ./edit-host.sh
+# 测试 !/bin/bash -x
 
 #Mac获取GitHub的IP 追加到hosts文件中
 
