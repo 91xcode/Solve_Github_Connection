@@ -4,6 +4,7 @@
 # chmod -R 777 edit-host.sh
 # sudo ./edit-host.sh
 # 测试 !/bin/bash -x
+# 如果git push 提示没权限  解决：sudo chown -R "${USER:-$(id -un)}" . 
 
 #Mac获取GitHub的IP 追加到hosts文件中
 
