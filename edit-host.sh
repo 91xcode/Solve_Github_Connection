@@ -11,8 +11,14 @@
 cd $(dirname $0)
 
 
+LOG_OPEN=1
 
-echo ">>>begin remove host for github>>>"
+function log()
+{
+     [ $LOG_OPEN -eq 1 ]  && echo "$(date '+%Y-%m-%d %H:%M:%S') $@"
+}
+
+log '[*] begin ...'
 
 filepath="/etc/hosts"
 
@@ -25,41 +31,38 @@ end=$(egrep -n "GitHub520 Host End" $filepath | awk -F ":" '{print $1}')
 
 
 if [ ! $start ] && [ ! $end ]; then
-  
-echo ">>>no start and end empty >>>"
+	log  '[*] no start and end empty...'
   
 else
-  
-echo $start
-echo $end
+ 
+ 	log  '[*] start:$start and end :$end...'
 
 if [ ${start} -gt 0 ] && [ ${end} -gt 0 ]; then
 	sed -i ""  "${start},${end}d" $filepath
 
 else
-	echo ">>>no start or end >>>"
+		log  '[*] no start or end...'
 fi
   
 fi 
 
+	log  '[√] remove host for github done...'
 
-echo ">>>done remove host for github>>>"
 
-
-echo ">>>start getGithubIP >>>"
+	log  '[*] python getGithubIP.py start...'
 
 python3 getGithubIP.py
 
-echo ">>>done getGithubIP>>>"
 
-
+	log  '[√] python getGithubIP.py done...'
 
 
 if [ ! -f ${filename} ];then
-  echo ">>>文件不存在>>>"
+		log  '[√] 文件不存在...'
 else
 	# sudo -s
 	cat hosts >> /etc/hosts
+	log  '[√] add /etc/hosts done...'
 
 fi
 
