@@ -13,7 +13,7 @@ from collections import Counter
 import requests
 from retry import retry
 
-RAW_URL = [
+RAW_URL_BAK  = [
     "alive.github.com",
     "live.github.com",
     "github.githubassets.com",
@@ -47,10 +47,11 @@ RAW_URL = [
     "github.community",
     "media.githubusercontent.com"]
 
-RAW_URL_BAK = [
+RAW_URL = [
 
    "github.com",
    "github.global.ssl.fastly.net",
+    "raw.githubusercontent.com",
 ]
 
 IPADDRESS_PREFIX = ".ipaddress.com"

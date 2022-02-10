@@ -31,11 +31,11 @@ end=$(egrep -n "GitHub520 Host End" $filepath | awk -F ":" '{print $1}')
 
 
 if [ ! $start ] && [ ! $end ]; then
-	log  '[*] no start and end empty...'
+	log  "[*] no start and end empty..."
   
 else
  
- 	log  '[*] start:$start and end :$end...'
+ 	log  "[*] start:${start} and end :${end}..."
 
 if [ ${start} -gt 0 ] && [ ${end} -gt 0 ]; then
 	sed -i ""  "${start},${end}d" $filepath
