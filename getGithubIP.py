@@ -13,9 +13,7 @@ from collections import Counter
 import requests
 from retry import retry
 
-RAW_URL_BAK  = [
-    "alive.github.com",
-    "live.github.com",
+RAW_URL = [
     "github.githubassets.com",
     "central.github.com",
     "desktop.githubusercontent.com",
@@ -47,14 +45,16 @@ RAW_URL_BAK  = [
     "github.community",
     "media.githubusercontent.com"]
 
-RAW_URL = [
+RAW_URL_bak = [
 
    "github.com",
    "github.global.ssl.fastly.net",
     "raw.githubusercontent.com",
 ]
 
-IPADDRESS_PREFIX = ".ipaddress.com"
+IPADDRESS_PREFIX = "ipaddress.com"
+
+https://ipaddress.com/website/github.com
 
 HOSTS_TEMPLATE = """# GitHub520 Host Start
 {content}
