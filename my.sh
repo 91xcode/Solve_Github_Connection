@@ -5,7 +5,7 @@
 #设置超时时间 
 set timeout 3
 #设置你的Mac用户密码
-set password xxxxxx
+set password wsbnd9
 #传递交互指令
 spawn sudo sh edit-host.sh
 #根据输出传递数据,在这里是等待密码提示显示
