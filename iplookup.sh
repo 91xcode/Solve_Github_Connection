@@ -89,7 +89,14 @@ printf "ok\nedit hosts ..."
 if [ "$EUID" -ne 0 ]; then
 	printf "error\nwill write\n$IpAddress\nPlease run as root"
 else
-	sed -i "" '/^# Auto Generate.*/,/&/d' $hosts
+
+   OS="`uname`"
+   if [[ "$OS" == "darwin"* ]]; then
+      sed -i '' -e '/^# Auto Generate.*/,/&/d' $hosts
+   else
+     sed -i -e '/^# Auto Generate.*/,/&/d' $hosts
+   fi
+	#sed -i "" '/^# Auto Generate.*/,/&/d' $hosts
 	printf "$IpAddress" >>$hosts
 	printf "ok\n"
 fi
