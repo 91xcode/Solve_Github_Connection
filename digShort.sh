@@ -79,6 +79,9 @@ else
    fi
     printf "$IpAddress" >>$hosts
     printf "ok\n"
+
+    # 清除DNS缓存命令
+    sudo killall -HUP mDNSResponder;say flushed
 fi
 
 
