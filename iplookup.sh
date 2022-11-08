@@ -1,7 +1,7 @@
 #!/usr/bin/env bash  
 
 
-
+hosts=/etc/hosts
 
 iplookup(){
     IP=$(dig +short $1 | head -n 1)
