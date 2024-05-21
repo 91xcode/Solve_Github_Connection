@@ -8,7 +8,7 @@ iplookup(){
     echo ${IP}
 }
 
-domains_bak=(
+domains=(
     "github.githubassets.com"
     "central.github.com"
     "desktop.githubusercontent.com"
@@ -41,7 +41,7 @@ domains_bak=(
     "media.githubusercontent.com"
 )
 
-domains=(
+domains_bak=(
     "github.com"
     "github.global.ssl.fastly.net"
     "raw.githubusercontent.com"
